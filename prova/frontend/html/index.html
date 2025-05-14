@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo de Aprendizado de Idiomas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Aprenda Idiomas com Imersão Cultural</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Idiomas</a></li>
+                <li><a href="#">Conteúdo Cultural</a></li>
+                <li><a href="#">Comunidade</a></li>
+                <li><a href="#">Meu Progresso</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="idiomas">
+            <h2>Escolha um Idioma</h2>
+            <div class="idioma-opcoes">
+                <button data-idioma="espanhol">Espanhol</button>
+                <button data-idioma="frances">Francês</button>
+                <button data-idioma="italiano">Italiano</button>
+                </div>
+            <div id="conteudo-idioma" class="hidden">
+                </div>
+        </section>
+
+        <section id="conteudo-cultural" class="hidden">
+            <h2>Explore a Cultura</h2>
+            <div class="filtro-conteudo">
+                <button data-tipo="video">Vídeos</button>
+                <button data-tipo="musica">Músicas</button>
+                <button data-tipo="podcast">Podcasts</button>
+                <button data-tipo="artigo">Artigos</button>
+            </div>
+            <div id="lista-conteudo">
+                </div>
+        </section>
+
+        <section id="comunidade" class="hidden">
+            <h2>Comunidade</h2>
+            <div id="forum">
+                </div>
+        </section>
+
+        <section id="progresso" class="hidden">
+            <h2>Meu Progresso</h2>
+            <div id="estatisticas-progresso">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aplicativo de Aprendizado de Idiomas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
