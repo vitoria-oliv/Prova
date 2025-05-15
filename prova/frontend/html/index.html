@@ -1,65 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativo de Aprendizado de Idiomas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imersão Cultural - Aprenda Idiomas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #002b5c;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 2rem;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+
+    .forum {
+      background: #e6f0ff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .botao {
+      background-color: #002b5c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #002b5c;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Aprenda Idiomas com Imersão Cultural</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Idiomas</a></li>
-                <li><a href="#">Conteúdo Cultural</a></li>
-                <li><a href="#">Comunidade</a></li>
-                <li><a href="#">Meu Progresso</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="idiomas">
-            <h2>Escolha um Idioma</h2>
-            <div class="idioma-opcoes">
-                <button data-idioma="espanhol">Espanhol</button>
-                <button data-idioma="frances">Francês</button>
-                <button data-idioma="italiano">Italiano</button>
-                </div>
-            <div id="conteudo-idioma" class="hidden">
-                </div>
-        </section>
+  <header>
+    <div><strong>Imersão Cultural & Idiomas</strong></div>
+    <nav>
+      <a href="#">Explorar</a>
+      <a href="#">Quizzes</a>
+      <a href="#">Comunidade</a>
+      <a href="#">Entrar</a>
+      <a href="#" class="botao">Cadastre-se</a>
+    </nav>
+  </header>
 
-        <section id="conteudo-cultural" class="hidden">
-            <h2>Explore a Cultura</h2>
-            <div class="filtro-conteudo">
-                <button data-tipo="video">Vídeos</button>
-                <button data-tipo="musica">Músicas</button>
-                <button data-tipo="podcast">Podcasts</button>
-                <button data-tipo="artigo">Artigos</button>
-            </div>
-            <div id="lista-conteudo">
-                </div>
-        </section>
+  <section class="hero">
+    <h1>Aprenda Francês</h1>
+    <p>Imersão completa no idioma e cultura com conteúdos interativos.</p>
+  </section>
 
-        <section id="comunidade" class="hidden">
-            <h2>Comunidade</h2>
-            <div id="forum">
-                </div>
-        </section>
+  <section class="grid">
+    <div class="card">
+      <h3>Imagem</h3>
+      <img src="../paris.PNG" alt="Vídeo Torre Eiffel">
+    </div>
+ <section class="secao">
+    <h2>Ouça agora</h2>
+    <div class="card">
+      <iframe width="100%" height="315" src="https://youtu.be/qPU8mENUBXk" 
+        title="La Vie en Rose - Édith Piaf" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </div>
+    <div class="card">
+      <h3>Podcasts</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Mont_Saint-Michel_from_above.jpg" alt="Podcast Cultural">
+    </div>
+    <div class="card">
+      <h3>Artigos</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/French_flag_icon.png" alt="Artigo Cultural">
+    </div>
+    <div class="card">
+      <h3>Quiz Cultural</h3>
+      <button class="botao">Iniciar</button>
+    </div>
+    <div class="card">
+      <h3>Exercícios Interativos</h3>
+      <p>Pratique com feedback instantâneo e avaliações personalizadas.</p>
+    </div>
+  </section>
 
-        <section id="progresso" class="hidden">
-            <h2>Meu Progresso</h2>
-            <div id="estatisticas-progresso">
-                </div>
-        </section>
-    </main>
+  <section class="forum">
+    <h2>Fórum de Discussão</h2>
+    <p>Participe de conversas com falantes nativos e outros aprendizes.</p>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Aplicativo de Aprendizado de Idiomas</p>
-    </footer>
+  <footer>
+    &copy; 2025 Imersão Cultural. Todos os direitos reservados.
+  </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
