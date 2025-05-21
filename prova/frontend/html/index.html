@@ -76,7 +76,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #002b5c;
+      background-color: #25005c;
       color: white;
     }
   </style>
@@ -95,49 +95,133 @@
   </header>
 
   <section class="hero">
-    <h1>Aprenda Francês</h1>
+    <h1>Aprenda Italiano</h1>
     <p>Imersão completa no idioma e cultura com conteúdos interativos.</p>
   </section>
 
   <section class="grid">
     <div class="card">
       <h3>Imagem</h3>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9zmKN6dObeD5MWQkokELensV9fcgZDWNfDw&s " alt="Vídeo Torre Eiffel">
+      <img src="https://fmcittadinanza.com/fmcidadaniaitaliana.com.br/wp-content/uploads/2023/08/estacoes-na-italia.jpeg" alt="Vídeo Torre Eiffel">
     </div>
- <section class="secao">
-    <h2>Ouça agora</h2>
+
     <div class="card">
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/IkMhWQgkZ8c" 
-        title="La Vie en Rose - Édith Piaf" frameborder="0" 
+      <h3>Música Italiana: "Volare"</h3>
+      <iframe width="100%" height="200" 
+        src="https://www.youtube.com/embed/Z-DVi0ugelc" 
+        title="Música Italiana - Volare" 
+        frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
+      </iframe>
     </div>
+
     <div class="card">
-      <h3>Podcasts</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Mont_Saint-Michel_from_above.jpg" alt="Podcast Cultural">
+      <h3>Podcast Italiano: Coffee Break Italian</h3>
+      <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/episode/4PdEgdR5dNfaObH2qHPTFi?utm_source=generator" 
+        width="100%" 
+        height="232" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
     </div>
-    <div class="card">
-      <h3>Artigos</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/French_flag_icon.png" alt="Artigo Cultural">
-    </div>
-    <div class="card">
-      <h3>Quiz Cultural</h3>
-      <button class="botao">Iniciar</button>
-    </div>
+
+  
     <div class="card">
       <h3>Exercícios Interativos</h3>
       <p>Pratique com feedback instantâneo e avaliações personalizadas.</p>
     </div>
   </section>
 
-  <section class="forum">
-    <h2>Fórum de Discussão</h2>
-    <p>Participe de conversas com falantes nativos e outros aprendizes.</p>
-  </section>
+  <div class="card">
+    <h3>Quiz Cultural Italiano</h3>
+    <form id="quizForm">
+      <div class="pergunta">
+        <p><strong>1. Qual é o prato típico da Itália preparado com massa fina, molho de tomate e queijo?</strong></p>
+        <label><input type="radio" name="q1" value="pizza"> Pizza</label><br>
+        <label><input type="radio" name="q1" value="paella"> Paella</label><br>
+        <label><input type="radio" name="q1" value="croissant"> Croissant</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>2. Qual famoso monumento está localizado em Pisa, na Itália?</strong></p>
+        <label><input type="radio" name="q2" value="torre"> Torre de Pisa</label><br>
+        <label><input type="radio" name="q2" value="coliseu"> Coliseu</label><br>
+        <label><input type="radio" name="q2" value="eiffel"> Torre Eiffel</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>3. Qual é o idioma oficial da Itália?</strong></p>
+        <label><input type="radio" name="q3" value="italiano"> Italiano</label><br>
+        <label><input type="radio" name="q3" value="espanhol"> Espanhol</label><br>
+        <label><input type="radio" name="q3" value="latim"> Latim</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>4. Quem pintou o teto da Capela Sistina?</strong></p>
+        <label><input type="radio" name="q4" value="michelangelo"> Michelangelo</label><br>
+        <label><input type="radio" name="q4" value="leonardo"> Leonardo da Vinci</label><br>
+        <label><input type="radio" name="q4" value="rafael"> Rafael</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>5. Qual evento famoso ocorre em Veneza e é conhecido pelas máscaras?</strong></p>
+        <label><input type="radio" name="q5" value="carnaval"> Carnaval de Veneza</label><br>
+        <label><input type="radio" name="q5" value="festival"> Festival de Florença</label><br>
+        <label><input type="radio" name="q5" value="republica"> Festa da República</label><br>
+      </div>
+  
+      <br>
+      <button type="submit" class="botao">Enviar Respostas</button>
+    </form>
+  
+    <p id="resultado" style="margin-top: 1rem; font-weight: bold;"></p>
+  </div>
+  
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let pontos = 0;
+  
+      const respostasCorretas = {
+        q1: "pizza",
+        q2: "torre",
+        q3: "italiano",
+        q4: "michelangelo",
+        q5: "carnaval"
+      };
+  
+      for (let pergunta in respostasCorretas) {
+        const respostaSelecionada = document.querySelector(`input[name="${pergunta}"]:checked`);
+        if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[pergunta]) {
+          pontos++;
+        }
+      }
+  
+      const total = Object.keys(respostasCorretas).length;
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = `Você acertou ${pontos} de ${total} perguntas.`;
+  
+      if (pontos === total) {
+        resultado.style.color = "#059669"; // verde
+      } else {
+        resultado.style.color = "#b91c1c"; // vermelho
+      }
+    });
+  </script>
+ <section class="forum">
+  <h2>Fórum de Discussão</h2>
+  <p>Participe de conversas com falantes nativos e outros aprendizes.</p>
+</section>
 
-  <footer>
-    &copy; 2025 Imersão Cultural. Todos os direitos reservados.
-  </footer>
+<footer>
+  &copy; 2025 Imersão Cultural. Todos os direitos reservados.
+</footer>
 
+
+  
 </body>
 </html>
