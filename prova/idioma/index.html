@@ -1,19 +1,330 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Clone Duolingo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imersão Cultural - Aprenda Idiomas</title>
+  <link rel="stylesheet" href="../frontend/css/idioma.css">
+  
 </head>
 <body>
-    <div class="app">
-        <h1>Aprendizado de Idiomas</h1>
-        <p id="palavra"></p>
-        <div id="opcoes"></div>
-        <p id="resultado"></p>
-        <p>Pontuação: <span id="pontuacao">0</span></p>
-        <button onclick="proximaPergunta()">Próxima</button>
+
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda Italiano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .images img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .images img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aprenda Italiano</h1>
+        <p>Enriqueça sua vida aprendendo italiano e cultura com conteúdo autêntico.</p>
+
+        <div class="images">
+            <img src="imagem1.jpg" alt="Imagem de Florença">
+            <img src="imagem2.jpg" alt="Imagem da costa italiana">
+        </div>
     </div>
-    <script src="script.js"></script>
+</body>
+</html>
+    
+    <div class="card">
+  <h3>Quiz Cultural</h3>
+  <button id="botaoQuiz" class="botao">Iniciar Quiz</button>
+</div>
+
+<div id="progresso" style="margin-top: 1rem; font-weight: bold;"></div>
+<div id="recomendacao" style="margin-top: 0.5rem; color: #4b5563;"></div>
+
+<script src="script.js"></script>
+
+  <header>
+    <div><strong>Imersão Cultural & Idiomas</strong></div>
+    <nav>
+      <a href="#">Explorar</a>
+      <a href="#">Quizzes</a>
+      <a href="#">Comunidade</a>
+      <a href="#">Entrar</a>
+      <a href="#" class="botao">Cadastre-se</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Aprenda Italiano</h1>
+    <p>Imersão completa no idioma e cultura com conteúdos interativos.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Imagem</h3>
+      <img src="https://fmcittadinanza.com/fmcidadaniaitaliana.com.br/wp-content/uploads/2023/08/estacoes-na-italia.jpeg" alt="Vídeo Torre Eiffel">
+    </div>
+
+    <div class="card">
+  <h3>Música Italiana: "Volare"</h3>
+  <iframe width="100%" height="200"
+    src="https://www.youtube.com/embed/Z-DVi0ugelc"
+    title="Música Italiana - Volare"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="card">
+  <h3>Podcast Italiano: Coffee Break Italian</h3>
+  <iframe style="border-radius:12px"
+    src="https://open.spotify.com/embed/episode/4PdEgdR5dNfaObH2qHPTFi?utm_source=generator"
+    width="100%"
+    height="232"
+    frameborder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
+
+
+  
+    <div class="card">
+      <h3>Exercícios Interativos</h3>
+      <p>Pratique com feedback instantâneo e avaliações personalizadas.</p>
+    </div>
+  </section>
+
+  <div class="card">
+    <h3>Quiz Cultural Italiano</h3>
+    <form id="quizForm">
+      <div class="pergunta">
+        <p><strong>1. Qual é o prato típico da Itália preparado com massa fina, molho de tomate e queijo?</strong></p>
+        <label><input type="radio" name="q1" value="pizza"> Pizza</label><br>
+        <label><input type="radio" name="q1" value="paella"> Paella</label><br>
+        <label><input type="radio" name="q1" value="croissant"> Croissant</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>2. Qual famoso monumento está localizado em Pisa, na Itália?</strong></p>
+        <label><input type="radio" name="q2" value="torre"> Torre de Pisa</label><br>
+        <label><input type="radio" name="q2" value="coliseu"> Coliseu</label><br>
+        <label><input type="radio" name="q2" value="eiffel"> Torre Eiffel</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>3. Qual é o idioma oficial da Itália?</strong></p>
+        <label><input type="radio" name="q3" value="italiano"> Italiano</label><br>
+        <label><input type="radio" name="q3" value="espanhol"> Espanhol</label><br>
+        <label><input type="radio" name="q3" value="latim"> Latim</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>4. Quem pintou o teto da Capela Sistina?</strong></p>
+        <label><input type="radio" name="q4" value="michelangelo"> Michelangelo</label><br>
+        <label><input type="radio" name="q4" value="leonardo"> Leonardo da Vinci</label><br>
+        <label><input type="radio" name="q4" value="rafael"> Rafael</label><br>
+      </div>
+  
+      <div class="pergunta">
+        <p><strong>5. Qual evento famoso ocorre em Veneza e é conhecido pelas máscaras?</strong></p>
+        <label><input type="radio" name="q5" value="carnaval"> Carnaval de Veneza</label><br>
+        <label><input type="radio" name="q5" value="festival"> Festival de Florença</label><br>
+        <label><input type="radio" name="q5" value="republica"> Festa da República</label><br>
+      </div>
+  
+
+      <div class="questao">
+  <h3>1. Vocabulário: Como se diz "Obrigado" em italiano?</h3>
+  <form>
+    <label><input type="radio" name="q1" value="a"> Merci</label><br>
+    <label><input type="radio" name="q1" value="b"> Gracias</label><br>
+    <label><input type="radio" name="q1" value="c" id="correta-q1"> Grazie</label><br>
+    <label><input type="radio" name="q1" value="d"> Danke</label>
+  </form>
+</div>
+
+<div class="questao">
+  <h3>2. Gramática: Qual é o artigo definido correto para a palavra italiana "ragazzo" (menino)?</h3>
+  <form>
+    <label><input type="radio" name="q2" value="a" id="correta-q2"> Il</label><br>
+    <label><input type="radio" name="q2" value="b"> Lo</label><br>
+    <label><input type="radio" name="q2" value="c"> La</label><br>
+    <label><input type="radio" name="q2" value="d"> L'</label>
+  </form>
+</div>
+
+<button onclick="verificarRespostas()" class="botao">Verificar</button>
+
+<div id="feedback"></div>
+
+      <br>
+      <button type="submit" class="botao">Enviar Respostas</button>
+    </form>
+  
+    <p id="resultado" style="margin-top: 1rem; font-weight: bold;"></p>
+  </div>
+  
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let pontos = 0;
+  
+      const respostasCorretas = {
+        q1: "pizza",
+        q2: "torre",
+        q3: "italiano",
+        q4: "michelangelo",
+        q5: "carnaval"
+      };
+  
+      for (let pergunta in respostasCorretas) {
+        const respostaSelecionada = document.querySelector(`input[name="${pergunta}"]:checked`);
+        if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[pergunta]) {
+          pontos++;
+        }
+      }
+  
+      const total = Object.keys(respostasCorretas).length;
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = `Você acertou ${pontos} de ${total} perguntas.`;
+  
+      if (pontos === total) {
+        resultado.style.color = "#059669"; // verde
+      } else {
+        resultado.style.color = "#b91c1c"; // vermelho
+      }
+    });
+  </script>
+ <section class="forum">
+  <h2>Fórum de Discussão</h2>
+  <p>Participe de conversas com falantes nativos e outros aprendizes.</p>
+</section>
+
+<footer>
+  &copy; 2025 Imersão Cultural. Todos os direitos reservados.
+</footer>
+
+<section class="exercicios-interativos">
+  <h2>Exercícios Interativos</h2>
+  <p>Pratique com feedback instantâneo e avaliações personalizadas.</p>
+
+  <form id="exerciciosForm">
+    <div class="questao">
+      <h3>1. Vocabulário: Como se diz "Obrigado" em italiano?</h3>
+      <label><input type="radio" name="q1" value="a"> Merci</label><br>
+      <label><input type="radio" name="q1" value="b"> Gracias</label><br>
+      <label><input type="radio" name="q1" value="c"> Grazie</label><br>
+      <label><input type="radio" name="q1" value="d"> Danke</label>
+      <p class="feedback" id="feedback-q1"></p>
+    </div>
+
+    <div class="questao">
+      <h3>2. Gramática: Qual é o artigo definido correto para a palavra italiana "ragazzo" (menino)?</h3>
+      <label><input type="radio" name="q2" value="a"> Il</label><br>
+      <label><input type="radio" name="q2" value="b"> Lo</label><br>
+      <label><input type="radio" name="q2" value="c"> La</label><br>
+      <label><input type="radio" name="q2" value="d"> L'</label>
+      <p class="feedback" id="feedback-q2"></p>
+    </div>
+
+    <button type="button" onclick="verificarRespostas()" class="botao">Verificar</button>
+  </form>
+
+  <div id="feedback-geral" style="margin-top:1rem; font-weight:bold;"></div>
+</section>
+
+<script>
+  function verificarRespostas() {
+    const respostasCorretas = {
+      q1: "c",
+      q2: "a"
+    };
+
+    let total = Object.keys(respostasCorretas).length;
+    let acertos = 0;
+
+    // Limpa feedbacks anteriores
+    document.getElementById("feedback-q1").textContent = "";
+    document.getElementById("feedback-q2").textContent = "";
+    document.getElementById("feedback-geral").textContent = "";
+
+    for (let q in respostasCorretas) {
+      const radios = document.getElementsByName(q);
+      let respostaSelecionada = null;
+      for (let radio of radios) {
+        if (radio.checked) {
+          respostaSelecionada = radio.value;
+          break;
+        }
+      }
+
+      const feedbackElem = document.getElementById("feedback-" + q);
+
+      if (!respostaSelecionada) {
+        feedbackElem.textContent = "Por favor, selecione uma resposta.";
+        feedbackElem.style.color = "#b91c1c"; // vermelho
+        continue;
+      }
+
+      if (respostaSelecionada === respostasCorretas[q]) {
+        feedbackElem.textContent = "Resposta correta!";
+        feedbackElem.style.color = "#059669"; // verde
+        acertos++;
+      } else {
+        feedbackElem.textContent = "Resposta errada.";
+        feedbackElem.style.color = "#b91c1c"; // vermelho
+      }
+    }
+
+    const feedbackGeral = document.getElementById("feedback-geral");
+    feedbackGeral.textContent = `Você acertou ${acertos} de ${total} perguntas.`;
+    feedbackGeral.style.color = acertos === total ? "#059669" : "#b91c1c";
+  }
+</script>
+
+  <script src="../frontend/js/idioma.js"></script>
+
+  
 </body>
 </html>

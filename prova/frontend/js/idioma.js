@@ -1,54 +1,68 @@
 // script.js
-const vocabulario = [
-    {portugues: 'gato', ingles: 'cat'},
-    {portugues: 'cachorro', ingles: 'dog'},
-    {portugues: 'maçã', ingles: 'apple'},
-    {portugues: 'livro', ingles: 'book'},
-    {portugues: 'amor', ingles: 'love'}
-];
 
-let pontuacao = 0;
-let perguntaAtual = {};
-let opcoes = [];
+// Variável que armazena o progresso do usuário
+let progresso = 0;
 
-function proximaPergunta() {
-    document.getElementById('resultado').textContent = '';
-    
-    perguntaAtual = vocabulario[Math.floor(Math.random() * vocabulario.length)];
-    document.getElementById('palavra').textContent = `Tradução de: "${perguntaAtual.portugues}"`;
-    
-    opcoes = [perguntaAtual.ingles];
-    
-    while (opcoes.length < 4) {
-        let aleatoria = vocabulario[Math.floor(Math.random() * vocabulario.length)].ingles;
-        if (!opcoes.includes(aleatoria)) {
-            opcoes.push(aleatoria);
-        }
-    }
-    
-    opcoes.sort(() => Math.random() - 0.5);
-    
-    const opcoesDiv = document.getElementById('opcoes');
-    opcoesDiv.innerHTML = '';
-    
-    opcoes.forEach(opcao => {
-        const btn = document.createElement('button');
-        btn.textContent = opcao;
-        btn.className = 'opcao';
-        btn.onclick = () => verificarResposta(opcao);
-        opcoesDiv.appendChild(btn);
-    });
+/**
+ * Atualiza visualmente o progresso do usuário na interface
+ */
+function atualizarProgresso() {
+  const progressoEl = document.getElementById('progresso');
+  if (progressoEl) {
+    progressoEl.textContent = `Progresso: ${progresso}%`;
+  }
 }
 
-function verificarResposta(resposta) {
-    if (resposta === perguntaAtual.ingles) {
-        document.getElementById('resultado').textContent = '✅ Correto!';
-        pontuacao++;
-    } else {
-        document.getElementById('resultado').textContent = `❌ Errado! Correto: ${perguntaAtual.ingles}`;
-    }
-    document.getElementById('pontuacao').textContent = pontuacao;
+/**
+ * Gera recomendações personalizadas com base no progresso
+ */
+function recomendarConteudo() {
+  const recomendacaoEl = document.getElementById('recomendacao');
+  if (!recomendacaoEl) return;
+
+  if (progresso < 30) {
+    recomendacaoEl.textContent = "Recomendamos começar pelos vídeos culturais!";
+  } else if (progresso < 70) {
+    recomendacaoEl.textContent = "Experimente os quizzes e jogos interativos!";
+  } else {
+    recomendacaoEl.textContent = "Participe do fórum para praticar com falantes nativos!";
+  }
 }
 
-// Iniciar o quiz ao carregar a página
-window.onload = proximaPergunta;
+/**
+ * Inicia o quiz interativo
+ */
+function iniciarQuiz() {
+  const resposta = prompt("Qual é a capital da França?");
+  
+  if (!resposta) {
+    alert("Por favor, insira uma resposta.");
+    return;
+  }
+
+  if (resposta.trim().toLowerCase() === "paris") {
+    alert("Correto! +10% de progresso.");
+    progresso = Math.min(progresso + 10, 100);
+  } else {
+    alert("Incorreto. Tente novamente mais tarde.");
+  }
+
+  atualizarProgresso();
+  recomendarConteudo();
+}
+
+/**
+ * Configura os eventos ao carregar a página
+ */
+function inicializarAplicacao() {
+  atualizarProgresso();
+  recomendarConteudo();
+
+  const botaoQuiz = document.getElementById('botaoQuiz');
+  if (botaoQuiz) {
+    botaoQuiz.addEventListener('click', iniciarQuiz);
+  }
+}
+
+// Evento de inicialização
+document.addEventListener('DOMContentLoaded', inicializarAplicacao);
