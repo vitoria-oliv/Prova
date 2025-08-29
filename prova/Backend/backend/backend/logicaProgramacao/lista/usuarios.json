@@ -1,0 +1,16 @@
+[
+    {
+        "nome": "irineu",
+        "telefone": "70707080",
+        "cidade": "gaucha",
+        "idade": 18,
+        "sexo": "M"
+    },
+    {
+        "nome": " floflor",
+        "telefone": "60706070",
+        "cidade": "goiania",
+        "idade": 3,
+        "sexo": "F"
+    }
+]
