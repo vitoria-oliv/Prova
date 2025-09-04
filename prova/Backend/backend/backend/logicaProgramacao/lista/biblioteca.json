@@ -1,0 +1,20 @@
+[
+    {
+        "titulo": "o livramento",
+        "autor": "vitoria",
+        "editora": "sesi",
+        "ano_publicacao": "2025",
+        "genero": "comedia",
+        "numero_paginas": "600",
+        "idioma": "portugues"
+    },
+    {
+        "titulo": "o livramento ",
+        "autor": "gigi canivete",
+        "editora": "soarestur",
+        "ano_publicacao": 2025,
+        "genero": "comida",
+        "numero_paginas": 345,
+        "idioma": "portugues"
+    }
+]
