@@ -59,3 +59,38 @@ with open('biblioteca.json', 'w') as arquivo:
     json.dump(livros, arquivo, indent=4)
 
 print(f"\nLivro '{titulo}' foi cadastrado com sucesso.")
+
+
+
+
+# i = 0 
+# i ++ -------- i = i + 1
+# Auto incremento = Automático 
+ 
+ # inventario = []
+ # with open ("biblioteca.json" , "r") as biblioteca:
+   # produto_para_alterar = int(input("digite o id do produto"))]
+   # inventario = json.load (biblioteca)
+   # for livro in inventario:
+   # if produto_para_alterar == livro ["id"]:
+    # novo_nome = input("digite seu nome")
+     # livro["nome"] = novo_nome
+# with open ("biblioteca.json" , "w") as biblioteca:
+   #json.dump (inventario, biblioteca, indent = 4)
+   #remover o arquivo
+     
+     #---------------------------------------------------------
+
+     # inventario = []
+ # with open ("biblioteca.json" , "r") as biblioteca:
+
+   # livro_para_excluir = int(input("digite o id do livro"))]
+   # inventario = json.load (biblioteca)
+   # for livro in inventario:
+    
+    # for livro in inventario = []
+    # if livro_para_excluir ! = livro ["id"]:
+    # novo_inventario.append(livro)
+
+# with open ("biblioteca.json" , "w") as biblioteca:
+   #json.dump (inventario, biblioteca, indent = 4)   

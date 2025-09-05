@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nome": "creta",
+        "marca": "vult",
+        "ano": 2022,
+        "cor": "azul",
+        "quilometragem": 20.0,
+        "preco": 92000.0,
+        "quantidade": 8
+    },
+    {
+        "id": 2,
+        "nome": "corolla",
+        "marca": "toyota",
+        "ano": 2024,
+        "cor": "preto",
+        "quilometragem": 15.0,
+        "preco": 120000.0,
+        "quantidade": 12
+    }
+]
