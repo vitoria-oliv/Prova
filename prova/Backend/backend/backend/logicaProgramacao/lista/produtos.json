@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "nome": "diamante",
+    "preco": 200.0
+  },
+  {
+    "id": 2,
+    "nome": "esmeralda",
+    "preco": 800.0
+  },
+  {
+    "id": 3,
+    "nome": "rubi",
+    "preco": 600.0
+  }
+]

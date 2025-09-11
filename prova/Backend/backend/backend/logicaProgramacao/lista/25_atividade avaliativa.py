@@ -1,75 +1,71 @@
 # Desenvolver o núcleo de um sistema de gerenciamento para uma pequena loja de eletõnicos.
 # O sistema precisa gerenciar duas entidade principais. 
+# ATIVIDADE AVALIATIVA 
 
 import json
-produto = []
-categoria = []
-
-id_categoria = 0 
-id_produto = 0 
 
 
+arquivo_Produto = "produtos.json"
+id_counter = 0
 
-def exibir_menu():
-    print("-----Loja Descoberta de Tudo-----")
-    print("1- Listar o Produto")
-    print("2- Cadastrar a Categoria")
-    print("3- Listar a Catedoria ")
-    print("4- Alterar Produto")
-    print("5- Adicionar produto")
-    print("6 - Categoria Adicionada")
-    print("7 - Sair, até a proxima")
+def carregarProdutos():
+    "Carrega os produtos de um arquivo JSON. Se o arquivo não existir, retorna uma lista vazia."
+    return json.load(open(arquivo_Produto, "r")) if os.path.exists(arquivo_Produto) else []
 
-def cadastro():
-    nome = input("Nome Da Nova Categoria:")
-    novo_id = categoria_id(categoria, "categoria_id")
-    novo_categoria = {
-        "categoria_id": categoria_id, 
-        "nome_categoria" : nome
-    }
+def salvarProdutos(produtos):
+    "Salva os produtos em um arquivo JSON de forma organizada."
+    json.dump(produtos, open(arquivo_Produto, "w"), indent=2, ensure_ascii=False)
 
-categoria.append(novo_categoria)
-salvar_arquivo(arquivo_categoria , categoria)
-categoria_id + = 1
+def cadastrarProduto():
+    global id_counter
+    produtos = carregarProdutos()
 
-
-    #-------------------------------------------------------------------
-def carregar_categoria():
+    print("\n--- Cadastro de Produto ---")
+    
+    nome = input("Nome do produto: ").strip()
+    if not nome:
+        print("Nome do produto não pode ser vazio.")
+        input("Pressione Enter para continuar...")
+        return
+        
     try:
-        with open(, 'r') as arquivo:
-            categoria = json.load(arquivo)
-            print("Arquivo carregado!")
-except FileNotFoundError:
-    print("Arquivo nao encontrado")
-
-def carregar_categorias():
-   print ("/cadastrar produto:")
-   nome_categoria = input ("nome: ")
-   id_categoria +=1 
-
- categoria_estoque = {
-       "nome_categoria" : nome_categorias, 
-       "id_categoria" : id_categoria
-}
-
- def cadastrar_produto(): 
-       id_produto +=1 
-       nome_produto = input ("nome: ")
-       preco = input ("preco: ")
-       id_categoria_associada = input 
-
-       produto_estoque = {
-         "nome_produto" : nome_produto,
-         "id_produto" : id_produto,
-         "preco" : preco,
-         "id_categoria_associada" : id_categoria_associada, 
- }
-
-#--------------------------------------------------------------------
-
-while True:
-    try:
-        ano_publicacao = int(input("diga o que quer: "))
-        break2222222
+        preco_str = input("Digite o valor do produto: ").replace(",", ".")
+        preco = float(preco_str)
     except ValueError:
-        print("fala só o que quer.")
+        print("Preço inválido. Por favor, digite um número.")
+        input("Pressione Enter para continuar...")
+        return
+
+    id_counter += 1
+    novo_produto = {"id": id_counter, "nome": nome, "preco": preco}
+    
+    produtos.append(novo_produto)
+    salvarProdutos(produtos)
+    
+    print(f"\nProduto cadastrado: ID: {id_counter} | Nome: {nome} | Preço: R$ {preco:.2f}")
+
+def listaProdutos():
+    produtos = carregarProdutos()
+    
+    if not produtos:
+        print("\nNenhum produto cadastrado.")
+    else:
+        print("\n----- Produtos -----")
+        for p in produtos:
+            print(f"ID: {p['id']} | Nome: {p['nome']} | Preço: R$ {p['preco']:.2f}")
+
+def MenuPrincipal():
+    while True:
+        funcao = input("\n--- Loja a Descoberta de Tudo ---\n1. Cadastrar novo produto\n2. Listar Produtos\n3. Sair\nOpção: ")
+        
+        match funcao:
+            case "1":
+                cadastrarProduto()
+            case "2":
+                listaProdutos()
+            case "3":
+                print("\nSaindo...")
+                break
+            case _:
+                print("\nOpção inválida, tente novamente.")
+MenuPrincipal()
