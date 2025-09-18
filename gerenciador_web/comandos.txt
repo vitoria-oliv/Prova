@@ -1,0 +1,9 @@
+python -m django startproject config
+ 
+ python manage.py startapp tarefas
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py runserver ----------> rodar o projeto 
