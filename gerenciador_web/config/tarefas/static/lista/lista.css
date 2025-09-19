@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffd9f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #6d1a5f;
+    margin-top: 20px;
+}
+
+
+.tarefa {
+    background-color: #7a1566;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(20, 19, 19);
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    transition: background-color 0.3s ease;
+}
