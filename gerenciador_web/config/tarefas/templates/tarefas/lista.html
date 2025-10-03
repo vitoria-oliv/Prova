@@ -12,6 +12,7 @@
 
     {% for tarefa in minhas_tarefas %}
         <div class="tarefa {% if tarefa.concluída %}concluída{% endif %}">
+            <h2><a href="{% url 'detalhe_tarefa' tarefa.id %}">{{ tarefa.titulo}}</a></h2>
             <h2>{{ tarefa.título }}</h2>
             <p>{{ tarefa.descricao }}</p>
             <small> Criada em: {{ tarefa.data_criacao }}</small>
@@ -22,3 +23,4 @@
 
 </body>
 </html>
+
